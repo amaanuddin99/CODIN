@@ -1,0 +1,38 @@
+import random 
+num=['1','2','3','4','5','6','7','8','9','0']
+letter=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+sym=['!','~','@','#','$','^','&','*']
+listr=[sym,letter,num]
+nosym=int(input("Enter the no of symbols\n"))
+nolet=int(input("Enter the no of letters\n"))
+nonum=int(input("Enter the no of nums\n"))
+total=nonum+nolet+nosym
+nsym=0
+nnum=0
+nlet=0
+psw=""
+i=0
+while(i<total):
+ try:
+   typer=random.choice(listr)
+   if(typer==sym):
+       no=random.choice(sym)
+       nsym=nsym+1
+       if(nsym==nosym):
+           listr.remove(sym)
+   if(typer==num):
+       no=random.choice(num)
+       nnum=nnum+1
+       if(nnum==nonum):
+           listr.remove(num)
+   if(typer==letter):
+       no=random.choice(letter)
+       nlet=nlet+1
+       if(nlet==nolet):
+           listr.remove(letter)
+   i=i+1
+   psw=psw+no
+ except:
+     break
+print(psw)
+    
